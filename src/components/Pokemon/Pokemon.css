@@ -1,0 +1,28 @@
+.pokemon {
+    margin-top: 2rem;
+    flex-basis: 20%;
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon:hover {
+    background-color: beige;
+}
+
+.pokemon-image {
+    margin-top: 1rem;
+    height: 150px;
+    max-height: 80%;
+    cursor: pointer;
+}
+
+.pokemon-name {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    font-size: larger;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    border: 0.5px solid black;
+}
