@@ -1,10 +1,15 @@
 import "./PokemonList.css";
 import Pokemon from "../Pokemon/Pokemon";
 import usePokemonList from "../../hooks/usePokemonList";
+import { useEffect } from "react";
 
 function PokemonList() {
 
-    const [pokemonListState, setPokemonListState] = usePokemonList();
+    const [pokemonListState, setPokemonListState] = usePokemonList(false);
+
+    useEffect(() => {
+        console.log("render");
+    }, [])
 
     return (
         <div className="pokemon-list-wrapper"> 
@@ -14,15 +19,15 @@ function PokemonList() {
           }
           </div>
           <div className="controls">
-          <button disabled={pokemonListState.prevUrl == null} onClick={() => {
-                    const urlToSet = pokemonListState.prevUrl;
-                    setPokemonListState({ ...pokemonListState, pokedexUrl: urlToSet})
-                }}>Prev</button>
-                <button disabled={pokemonListState.nextUrl == null} onClick={() => {
-                    console.log(pokemonListState)
-                    const urlToSet = pokemonListState.nextUrl;
-                    setPokemonListState({ ...pokemonListState, pokedexUrl: urlToSet})
-                }}>Next</button>
+            <button disabled={pokemonListState.prevUrl == null} onClick={() => {
+                        const urlToSet = pokemonListState.prevUrl;
+                        setPokemonListState({ ...pokemonListState, pokedexUrl: urlToSet})
+                    }}>Prev</button>
+                    <button disabled={pokemonListState.nextUrl == null} onClick={() => {
+                        console.log(pokemonListState)
+                        const urlToSet = pokemonListState.nextUrl;
+                        setPokemonListState({ ...pokemonListState, pokedexUrl: urlToSet})
+                   }}>Next</button>
           </div>
 
         </div>
